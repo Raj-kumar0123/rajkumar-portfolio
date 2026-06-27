@@ -1,0 +1,19 @@
+/* src/components/About.css */
+.about { padding: 6rem 10%; max-width: 1200px; margin: 0 auto; }
+.section-title-wrapper { text-align: center; margin-bottom: 3rem; }
+.section-title-wrapper h2 { font-size: 2.2rem; font-weight: 700; }
+.horizontal-line { width: 40px; height: 3px; background: var(--accent); margin: 0.6rem auto 0 auto; border-radius: 2px; }
+
+.about-grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.about-card-wide { grid-column: span 2; padding: 2.5rem; }
+.about-card-split { padding: 2.5rem; }
+.about-grid-layout h3 { font-size: 1.25rem; color: #fff; margin-bottom: 0.8rem; }
+.about-grid-layout p { color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; }
+.about-card-split h4 { color: #fff; margin-top: 0.5rem; }
+.about-card-split .sub { color: var(--accent); font-weight: 500; font-size: 0.9rem; }
+.timeline-badge-year { font-weight: bold; margin-top: 0.5rem; color: var(--text-primary) !important; }
+
+@media (max-width: 768px) {
+  .about-grid-layout { grid-template-columns: 1fr; }
+  .about-card-wide { grid-column: span 1; }
+}

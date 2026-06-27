@@ -1,0 +1,21 @@
+/* src/components/Skills.css */
+.skills { padding: 6rem 10%; max-width: 1200px; margin: 0 auto; }
+.skill-bucket { margin-bottom: 2.5rem; }
+.skill-bucket h3 { font-size: 1.2rem; margin-bottom: 1.2rem; color: #fff; border-left: 2px solid var(--accent); padding-left: 8px; }
+.skill-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.skill-pill { padding: 1.2rem; }
+.pill-top { display: flex; align-items: center; margin-bottom: 0.75rem; }
+.icon-wrap { color: var(--accent); font-size: 1.2rem; display: flex; align-items: center; margin-right: 8px; }
+.name-wrap { font-size: 0.9rem; font-weight: 500; color: #fff; }
+.percent-wrap { margin-left: auto; font-size: 0.8rem; color: var(--text-secondary); }
+.pill-bar-bg { width: 100%; height: 4px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; overflow: hidden; }
+.pill-bar-fill { height: 100%; background: var(--accent); }
+/* Purani .percent-wrap ko hataakar bas yeh update kar do */
+.percent-wrap {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent); /* Aapka purple custom color automatically pick kar lega */
+  white-space: nowrap;
+  margin-left: auto; /* Label ko right side par tight align rakhega */
+  padding-left: 10px;
+}

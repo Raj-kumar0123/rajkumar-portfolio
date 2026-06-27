@@ -1,0 +1,201 @@
+/* src/components/Projects.css */
+.projects-view { padding: 6rem 10%; max-width: 1200px; margin: 0 auto; }
+.projects-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.project-blueprint { display: flex; flex-direction: column; overflow: hidden; }
+.blueprint-visual { width: 100%; height: 170px; background: linear-gradient(180deg, #111, #1a1a1a); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text-secondary); }
+.blueprint-meta { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.blueprint-meta h3 { font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; }
+.blueprint-meta p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.2rem; }
+.blueprint-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+.chip { background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.15); color: var(--accent); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.blueprint-links { display: flex; gap: 1rem; margin-top: auto; }
+.blueprint-links a { text-decoration: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
+.blueprint-links a:hover { color: #fff; }
+.blueprint-links .highlight { color: var(--accent); }
+/* MODAL BACKDROP TRANSFORMATION */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-window {
+  width: 100%;
+  max-width: 950px;
+  max-height: 85vh;
+  background: rgba(22, 22, 29, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.1);
+  border-radius: 16px;
+  position: relative;
+  overflow-y: auto;
+  padding: 2.5rem;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #a0aec0);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close-btn:hover { color: #ef4444; }
+
+.modal-grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* CAROUSEL IMAGES PANE */
+.modal-visual-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 16/10;
+  background: #0f0f13;
+}
+.modal-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 15, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.nav-arrow:hover { background: rgba(168, 85, 247, 0.8); }
+.nav-arrow.left { left: 0.8rem; }
+.nav-arrow.right { right: 0.8rem; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+.carousel-dots .dot.active { background: #a855f7; width: 18px; border-radius: 4px; transition: all 0.2s; }
+
+/* INFO LAYOUT DETAILS */
+.modal-info-pane h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem; }
+.horizontal-line.micro { width: 60px; height: 3px; background: #a855f7; margin-bottom: 1rem; }
+.modal-desc { color: var(--text-secondary, #cbd5e1); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; }
+.modal-info-pane h4 { font-size: 1.1rem; color: #fff; margin: 1.2rem 0 0.5rem 0; font-weight: 600; }
+.modal-features-list { list-style: none; padding: 0; margin: 0; }
+.modal-features-list li { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.4rem; }
+
+/* MODAL ACTION BUTTONS */
+.modal-footer-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.modal-action-git {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.modal-action-git:hover { background: rgba(255, 255, 255, 0.15); }
+.modal-action-close {
+  padding: 0.75rem 1.5rem;
+  background: #ef4444;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-action-close:hover { background: #dc2626; }
+
+/* CARD OVERLAY & REUSE SHAPE */
+.blueprint-visual { position: relative; cursor: pointer; overflow: hidden; height: 160px; display: flex; align-items: center; justify-content: center; }
+.card-lazy-thumb { width: 100%; height: 100%; object-fit: cover; }
+.visual-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,20,0.6); opacity: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s; }
+.blueprint-visual:hover .visual-overlay { opacity: 1; }
+.line-clamp-desc { display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; }
+/* 🛠️ PREVIEW BUTTON PROFESSIONAL RESET */
+.preview-btn {
+  background: transparent; /* Default white background hatao */
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-secondary, #cbd5e1); /* GitHub button jaisa clean text color */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Icon aur text ke beech professional spacing */
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover karne par halka sa modern purple glow overlay */
+.preview-btn:hover {
+  color: #a855f7; /* Portfolio theme ka active purple color */
+  transform: translateY(-1px); /* Subtle premium lift effect */
+}
+
+/* Agar icons ka size thoda bada-chota lag raha ho */
+.preview-btn svg {
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+  .modal-grid-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .modal-window { padding: 1.5rem; max-height: 90vh; }
+}
+.line-clamp-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2; /* 👈 Yeh standard property add kar do, warning chali jayegi */
+  overflow: hidden;
+}

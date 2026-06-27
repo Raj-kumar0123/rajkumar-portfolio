@@ -1,0 +1,15 @@
+/* src/components/Certifications.css */
+.certs-view { padding: 6rem 10%; max-width: 1000px; margin: 0 auto; }
+.certs-deck { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.cert-row-card { display: flex; align-items: center; padding: 1.2rem 1.8rem; gap: 1.2rem; }
+.cert-badge-icon { color: var(--accent); font-size: 1.4rem; display: flex; align-items: center; }
+.cert-txt-info { flex-grow: 1; }
+.cert-txt-info h3 { font-size: 1.05rem; color: #fff; font-weight: 600; }
+.cert-txt-info p { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.15rem; }
+.highlight-date { color: var(--accent); font-weight: 500; }
+.cert-redirect { color: var(--text-secondary); font-size: 0.95rem; transition: color 0.2s; }
+.cert-redirect:hover { color: var(--accent); }
+
+@media (max-width: 550px) {
+  .cert-row-card { flex-direction: column; text-align: center; padding: 1.5rem; }
+}

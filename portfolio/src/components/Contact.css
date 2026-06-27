@@ -1,0 +1,19 @@
+/* src/components/Contact.css */
+.contact-panel { padding: 6rem 10%; max-width: 1100px; margin: 0 auto; }
+.contact-split-box { display: grid; grid-template-columns: 4.5fr 5.5fr; gap: 3rem; margin-top: 2rem; }
+.contact-panel-left h3 { font-size: 1.6rem; color: #fff; margin-bottom: 0.8rem; }
+.contact-panel-left p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+.contact-direct-rows { display: flex; flex-direction: column; gap: 0.8rem; }
+.c-row { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.9rem; }
+.c-ico { color: var(--accent); }
+
+.contact-panel-form { padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.field-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.field-group label { font-size: 0.8rem; font-weight: 500; color: var(--text-primary); }
+.field-group input, .field-group textarea { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 0.75rem 1rem; color: #fff; border-radius: 8px; font-family: inherit; font-size: 0.9rem; }
+.field-group input:focus, .field-group textarea:focus { outline: none; border-color: var(--accent); }
+.font-fix { width: 100%; border: none; font-family: inherit; text-align: center; cursor: pointer; }
+
+@media (max-width: 768px) {
+  .contact-split-box { grid-template-columns: 1fr; gap: 2rem; }
+}
