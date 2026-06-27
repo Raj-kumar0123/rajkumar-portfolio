@@ -4,8 +4,8 @@ import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 import './Certifications.css';
 
 // 📝 Import PDFs from assets folder
-import hpCert from '../assets/hpcert.pdf';
-import internCert from '../assets/interncert.pdf';
+import hpCert from '../assets/hpCert.pdf';
+import internCert from '../assets/internCert.pdf';
 
 const Certifications = () => {
   const assets = [
