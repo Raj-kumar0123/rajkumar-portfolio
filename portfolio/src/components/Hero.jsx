@@ -1,12 +1,14 @@
-// src/components/Hero.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'; 
 import './Hero.css';
 
-// 👇 Yahan humne apni download ki hui local JSON file ko import kar liya
+// 👇 Yahan humne aapki local JSON file ko import kiya
 import developerAnimation from '../assets/developer.json';
+
+// 👇 Yahan humne assets folder se resume ko import kar liya
+import resumePdf from '../assets/resume.pdf';
 
 const Hero = () => {
   return (
@@ -24,12 +26,22 @@ const Hero = () => {
           
           <div className="hero-cta">
             <a href="#projects" className="btn-main">View Work</a>
-            <a href="#" className="btn-sub"><FaDownload /> Resume</a>
+            
+            {/* 👇 Resume link aur download attribute yahan add kar diya hai */}
+            <a 
+              href={resumePdf} 
+              target="_blank" 
+              rel="noreferrer" 
+              download="Raj_Kumar_Resume.pdf" 
+              className="btn-sub"
+            >
+              <FaDownload /> Resume
+            </a>
           </div>
 
           <div className="hero-social-row">
-            <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+            <a href="https://github.com/Raj-kumar0123" target="_blank" rel="noreferrer"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/raj-kumar-63a38b339/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
           </div>
         </motion.div>
 
@@ -40,7 +52,6 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="photo-box glass-card" style={{ padding: '10px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '350px', width: '100%' }}>
-            {/* 👇 `src=""` ki jagah humne `data={}` use kiya hai local file chalane ke liye */}
             <DotLottieReact
               data={developerAnimation} 
               loop
